@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
-import { Product } from '../product.model';
 import { HttpClient } from '@angular/common/http';
+
+import { Product } from '../shared/state.model';
 
 @Component({
     selector: 'app-container-b',
@@ -20,12 +20,10 @@ export class ContainerBComponent implements OnInit {
     }
 
     getProduct() {
-        console.log(111)
         this.http
             .get('/assets/mock/detail.json')
             .subscribe(res => {
                 this.product = res as Product;
-                console.log(this.product)
             });
     }
 }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Category } from '../product.model';
+import { Category } from '../shared/state.model';
+import { StoreService } from '../shared/store.service';
 
 @Component({
     selector: 'app-container-a',
@@ -13,9 +14,13 @@ export class ContainerAComponent implements OnInit {
     cate2: Category;
     constructor(
         private http: HttpClient,
+        private store: StoreService,
     ) {}
 
     ngOnInit() {
+        this.store.getState().subscribe(state => {
+            console.log('[state]', state);
+        });
         this.getCate1();
         this.getCate2();
     }
@@ -34,7 +39,6 @@ export class ContainerAComponent implements OnInit {
             .get('/assets/mock/category2.json')
             .subscribe(res => {
                 this.cate2 = res as Category;
-                console.log(this.cate1);
             });
     }
 }
