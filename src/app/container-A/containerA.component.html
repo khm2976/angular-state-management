@@ -1,14 +1,14 @@
 <ul class="detail_categroy">
-    <li *ngIf="cate1">
+    <li *ngIf="category1">
         <div class="categroy_dropbx">
             <div class="resultbx">
-                {{ cate1.category_name }}
+                {{ category1.category_name }}
             </div>
             <div class="sel_lst">
                 <div class="sel_scrall">
                     <div class="sel_scrallin">
                         <ul>
-                            <li *ngFor="let menu of cate1.sub">
+                            <li *ngFor="let menu of category1.sub">
                                 <a href="#">{{ menu.category_name }}</a>
                             </li>
                         </ul>
@@ -17,16 +17,16 @@
             </div>
         </div>
     </li>
-    <li *ngIf="cate2">
+    <li *ngIf="category2">
         <div class="categroy_dropbx">
             <div class="resultbx">
-                {{ cate2.category_name }}
+                {{ category2.category_name }}
             </div>
             <div class="sel_lst">
                 <div class="sel_scrall">
                     <div class="sel_scrallin">
                         <ul>
-                            <li *ngFor="let menu of cate2.sub">
+                            <li *ngFor="let menu of category2.sub">
                                 <a href="#">{{ menu.category_name }}</a>
                             </li>
                         </ul>

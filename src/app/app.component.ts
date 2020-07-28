@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { StoreService } from './shared/store.service';
+import { Category, Product } from './shared/state.model';
 
 @Component({
     selector: 'app-root',
@@ -8,6 +9,9 @@ import { StoreService } from './shared/store.service';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+    category1: Category;
+    category2: Category;
+    product: Product;
 
     constructor(
         private store: StoreService,
@@ -15,6 +19,14 @@ export class AppComponent {
     }
     
     ngOnInit() {
+        // 초기 렌더를 위해 한번만 렌더
+        this.store.getState().subscribe(state => {
+            console.log('[state]', state);
+            this.category1 = state.category1;  // 카테고리1
+            this.category2 = state.category2;  // 카테고리2
+            this.product = state.product;    // 상세
+        });
+
         this.store.setState({
             category1: {
                 category_code: 999,
@@ -29,7 +41,7 @@ export class AppComponent {
             },
             category2: {
                 category_code: 999,
-                category_name: '상태 변화1',
+                category_name: '상태 변화2',
                 sub: [{
                     category_code: 111,
                     category_name: '상태 변화1',
@@ -53,6 +65,6 @@ export class AppComponent {
                     imageUrl: 'https://'
                 }
             });
-        }, 3000)
+        }, 10000)
     }
 }

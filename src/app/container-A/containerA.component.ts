@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Category } from '../shared/state.model';
@@ -10,8 +10,9 @@ import { StoreService } from '../shared/store.service';
     styleUrls: ['./containerA.component.css'],
 })
 export class ContainerAComponent implements OnInit {
-    cate1: Category;
-    cate2: Category;
+    @Input() category1: Category;
+    @Input() category2: Category;
+
     constructor(
         private http: HttpClient,
         private store: StoreService,
@@ -30,8 +31,8 @@ export class ContainerAComponent implements OnInit {
         this.http
             .get('/assets/mock/category1.json')
             .subscribe(res => {
-                this.cate1 = res as Category;
-                console.log(this.cate1);
+                //this.cate1 = res as Category;
+                //console.log(this.cate1);
             });
     }
 
@@ -39,7 +40,7 @@ export class ContainerAComponent implements OnInit {
         this.http
             .get('/assets/mock/category2.json')
             .subscribe(res => {
-                this.cate2 = res as Category;
+                //this.cate2 = res as Category;
             });
     }
 }
