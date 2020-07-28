@@ -26,13 +26,6 @@ export class RequestDataService {
         .pipe(
             map(list => {
                 console.log(list)
-              /*  const apiData = list.reduce((
-                    previousValue: any,
-                    currentValue: { type: string; success: boolean; value: Error | any; }
-                ) => {
-                    return { ...previousValue,
-                        [currentValue['type']]: currentValue['success'] ? currentValue['value'] : null };
-                }, { itemDetail });*/
             })
         );
             
