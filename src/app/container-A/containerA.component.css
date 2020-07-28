@@ -1,0 +1,23 @@
+.detail_categroy{padding:35px 0 5px;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;flex-wrap:nowrap}
+.detail_categroy>li{position:relative;min-height:30px;margin:0 5px;vertical-align:top}
+.detail_categroy>li+li:before{position:absolute;top:0;left:-10px;color:#5d5d5d;font-size:22px;font-weight:100;content:'/'}
+.categroy_dropbx{position:relative;z-index:10;margin:0 10px}
+.categroy_dropbx .resultbx{display:block;position:relative;padding:0 30px 0 0;border:0;font-size:15px;font-weight:500;color:#000;line-height:30px}
+.categroy_dropbx .resultbx ruler-svg-icon-nav-open{position:absolute;top:4px;right:0;width:22px;height:22px}
+.categroy_dropbx .sel_lst{overflow:auto;position:absolute;top:103%;left:50%;width:170px;margin-left:-85px;background:#fff}
+.categroy_dropbx .sel_scrall{
+-webkit-transition: height .25s ease-out;
+-moz-transition: height .25s ease-out;
+-ms-transition: height .25s ease-out;
+-o-transition: height .25s ease-out;
+transition: height .25s ease-out;
+/* height:0; */
+display:none}
+.categroy_dropbx .sel_scrall{padding:5px 0}
+.categroy_dropbx .sel_scrall a{display:block;padding:7px 20px 5px;border:1px solid #fff;font-size:12px;color:#5d5d5d;cursor:pointer}
+.categroy_dropbx .sel_scrall a:hover{background:#eee}
+.categroy_dropbx:hover .sel_lst{z-index:10}
+.categroy_dropbx:hover .sel_scrall{display:block;border:1px solid #303333}
+@media screen and (max-width: 540px){
+    .detail_categroy{display:none}
+}

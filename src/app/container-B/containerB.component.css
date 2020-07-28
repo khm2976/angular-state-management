@@ -1,0 +1,37 @@
+.detail_info_area{margin-top:9px}
+.detail_info_area .dsc{font-size:14px;text-align:left;padding-bottom:10px}
+.detail_info_area .dsc2{font-size:12px;text-align:left;padding-top:10px}
+.content_cnt{width:1000px;margin:0 auto;padding:70px 0 200px}
+.accodionbx{position:relative;border-bottom:1px solid #d4d4d4}
+.accodionbx:first-child>li{border-top:1px solid #d4d4d4}
+.accodionbx .lnk_text{position:relative;width:100%;padding:17px 20px 15px 0;font-size:17px;color:#303033;text-align:left;font-weight:bold;outline:none}
+/*.accodionbx .lnk_text:hover+.accodion_content,*/
+.accodionbx .lnk_text span{pointer-events:none}
+.accodionbx .lnk_text.active+.accodion_content{height:auto}
+.accodionbx ruler-svg-icon-more{position:absolute;top:50%;right:6px;width:12px;height:6px;margin-top:-3px;line-height:6px;transform:rotate(0deg);-webkit-transition:transform 0.4s ease-in-out;transition:transform 0.4s ease-in-out;pointer-events:none}
+.accodionbx .active ruler-svg-icon-more{transform:rotate(180deg)}
+.accodionbx .accodion_content>div{margin-top:-5px;padding:0 0 10px;font-size:14px;color:#303033;line-height:1.8}
+.accodionbx .accodion_content .point{color:#375fff}
+.accodionbx .btnbx{margin-top:10px}
+.accodionbx .btnbx .btn_sizehelp{width:110px}
+.accodionbx p:after{display:block;clear:both;content:''}
+.accodionbx p em{display:block}
+.accodionbx p .tit{float:left;padding-right:5px}
+.accodionbx p .dsc{overflow:hidden}
+.accodionbx p .point{color:#ff4800}
+.labeling_dsc{display:-webkit-flex;display:flex;border-bottom:1px solid #000}
+.labeling_dsc .tbl_section{-webkit-flex:1;flex:1}
+.labeling_dsc .tbl_section+.tbl_section{margin-left:30px}
+.tblarea2{border-top:4px solid #000}
+.tblarea2{margin-top:10px;border:1px solid #d4d4d4;border-width:0 1px 1px 0;font-size:14px;color:#000;text-align:center}
+.tblarea2 th{padding:10px 0;border:1px solid #d4d4d4;border-width:1px 0 0 1px;font-weight:normal}
+.tblarea2 td{border:1px solid #d4d4d4;border-width:1px 0 0 1px}
+.tblarea2 td .inbx{padding:10px 0}
+.tblarea2 .before_order{background:#303033;color:#fff}
+.tblarea2 .before_order .imgbx{display:inline-block;overflow:hidden;width:40px;height:40px;margin:-5px 0 -10px}
+.tblarea2 .before_order .imgbx img{width:100%}
+@media screen and (max-width:540px){
+    .detail_info_area{float:none;width:auto;padding:0 20px}
+    .accodionbx{border-bottom:1px solid #e4e4e4}
+    .accodionbx:first-child>li{border-top:1px solid #e4e4e4}
+}
