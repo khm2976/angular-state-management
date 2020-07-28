@@ -49,10 +49,10 @@ export class AppComponent {
             this.store.setState({
                 product: {
                     name: '상품 테스트222',
-                    itemNo: 12345,
+                    itemNo: 67890,
                     imageUrl: 'https://'
                 }
             });
-        }, 1000)
+        }, 3000)
     }
 }

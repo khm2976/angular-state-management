@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { Product } from '../shared/state.model';
 import { StoreService } from '../shared/store.service';
+import { SelectorService } from '../shared/selector.service';
 
 @Component({
     selector: 'app-container-b',
@@ -15,6 +16,7 @@ export class ContainerBComponent implements OnInit {
     constructor(
         private http: HttpClient,
         private store: StoreService,
+        private selector: SelectorService,
     ) {}
 
     ngOnInit() {
@@ -22,6 +24,10 @@ export class ContainerBComponent implements OnInit {
         this.store.getState().subscribe(state => {
             console.log('[state]', state);
         });
+        this.selector.selectorProduct().subscribe(state => {
+            console.log("프로덕트")
+            console.log(state)
+        })
         this.getProduct();
     }
 
