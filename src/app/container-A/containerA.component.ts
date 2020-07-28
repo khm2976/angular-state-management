@@ -7,7 +7,7 @@ import { StoreService } from '../shared/store.service';
 @Component({
     selector: 'app-container-a',
     templateUrl: './containerA.component.html',
-    styleUrls: ['./containerA.component.css']
+    styleUrls: ['./containerA.component.css'],
 })
 export class ContainerAComponent implements OnInit {
     cate1: Category;
@@ -18,6 +18,7 @@ export class ContainerAComponent implements OnInit {
     ) {}
 
     ngOnInit() {
+        // 상태 변화에 대해 구독.
         this.store.getState().subscribe(state => {
             console.log('[state]', state);
         });
