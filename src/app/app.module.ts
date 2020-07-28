@@ -7,6 +7,7 @@ import { ContainerAComponent } from './container-A/containerA.component';
 import { ContainerBComponent } from './container-B/containerB.component';
 import { StoreService } from './shared/store.service';
 import { SelectorService } from './shared/selector.service';
+import { RequestDataService } from './shared/request-data.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { SelectorService } from './shared/selector.service';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [StoreService, SelectorService],
+  providers: [StoreService, SelectorService, RequestDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
