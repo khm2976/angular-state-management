@@ -22,18 +22,16 @@ export class AppComponent {
     }
     
     ngOnInit() {
-        // 초기 렌더를 위해 한번만 렌더
-        this.store.getState().subscribe(state => {
-            console.log('[state]', state);
-            this.category1 = state.category1;  // 카테고리1
-            this.category2 = state.category2;  // 카테고리2
-            this.product = state.product;    // 상세
-        });
+        
 
 
         // API 를 한곳에 모아서 처리한다.
         this.productService.getDatas().subscribe(()=>{
-            
+            // API 호출 완료후 초기 렌더를 위해 한번만 렌더
+            this.store.getState().subscribe(state => {
+                console.log('[state]', state);
+                
+            });
         })
         this.store.setState({
             category1: {

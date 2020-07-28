@@ -19,12 +19,6 @@ export class ContainerAComponent implements OnInit {
     ) {}
 
     ngOnInit() {
-        // 상태 변화에 대해 구독.
-        this.store.getState().subscribe(state => {
-            console.log('[state]', state);
-        });
-        this.getCate1();
-        this.getCate2();
     }
 
     getCate1() {
