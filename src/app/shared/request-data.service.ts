@@ -3,8 +3,8 @@
  */
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { forkJoin } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { forkJoin, of } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 
 @Injectable()
 export class RequestDataService {
@@ -25,28 +25,45 @@ export class RequestDataService {
         return forkJoin(url)
         .pipe(
             map(list => {
-                console.log(list)
+                // 배열 순서 상관없이 타입 네임으로 접근 할수 있도록 object 형태로 만들어 준다.
+                const data = list.reduce((
+                    previousValue: any,
+                    currentValue: { type: string; success: boolean; value: Error | any; }
+                ) => {
+                    return { ...previousValue,
+                        [currentValue['type']]: currentValue['success'] ? currentValue['value'] : null };
+                }, { });
+
+                return data;
             })
         );
-            
-
-              //  return apiData;
-        //});
     }
 
     getCategory1() {
         return this.http
-        .get('/assets/mock/category1.json');
+        .get('/assets/mock/category1.json')
+        .pipe(
+            map(res => this.endRequest('category1', res)),
+            catchError( error => this.handleError('category1', error))
+        );
     }
 
     getCategory2() {
         return this.http
-        .get('/assets/mock/category2.json');
+        .get('/assets/mock/category2.json')
+        .pipe(
+            map(res => this.endRequest('category2', res)),
+            catchError( error => this.handleError('category2', error))
+        );
     }
 
     getProduct() {
         return this.http
-        .get('/assets/mock/detail.json');
+        .get('/assets/mock/detail.json')
+        .pipe(
+            map(res => this.endRequest('product', res)),
+            catchError( error => this.handleError('product', error))
+        );
     }
     
     /**
@@ -60,9 +77,9 @@ export class RequestDataService {
     }
 
     // forkjoin Observable 중단되지 않도록 에러처리
-   /* handleError(type: string, error: any) {
+    handleError(type: string, error: any) {
         console.error('An error occurred', error);
 
-        return Observable.of(this.endRequest(type, new Error(error), false));
-    }*/
+        return of(this.endRequest(type, new Error(error), false));
+    }
 }

@@ -19,6 +19,7 @@ export class ProductService {
         return Observable.create(observer => {
             this.requestDataService.getDatas()
             .subscribe(data => {
+                console.log(data);
                /* const category = data.itemDetail.front_category_info && data.itemDetail.front_category_info.length
                 ? data.itemDetail.front_category_info[0]
                 : null;
