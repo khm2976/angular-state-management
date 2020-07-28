@@ -1,0 +1,11 @@
+{
+    "category_code": 1234,
+    "category_name": "반팔",
+    "sub": [{
+        "category_code": 1234,
+        "category_name": "반팔"
+    }, {
+        "category_code": 5678,
+        "category_name": "긴팔"
+    }]
+}

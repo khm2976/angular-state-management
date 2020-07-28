@@ -1,14 +1,16 @@
 <div class="detail_info_area">
     <div class="accodionbx">
         <div class="accodion_content">
-            <div>
+            <div *ngIf="product">
                 <p>
-                    <em class="tit">타이틀:</em>
-                    <em class="dsc">타이틀 자리</em>
+                    <em class="tit">상품코드</em>
+                    <em class="tit">{{ product.itemNo }}</em>
                 </p>
                 <p>
-                    <em class="tit">컨텐츠: </em>
-                    <em class="dsc">컨텐츠 자리</em>
+                    <em class="tit">{{ product.name }}</em>
+                </p>
+                <p>
+                    <img src="{{ product.imageUrl }}" alt="">
                 </p>
             </div>
         </div>

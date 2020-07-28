@@ -1,32 +1,34 @@
 <ul class="detail_categroy">
-    <li>
+    <li *ngIf="cate1">
         <div class="categroy_dropbx">
             <div class="resultbx">
-                대카테고리 타이틀
+                {{ cate1.category_name }}
             </div>
             <div class="sel_lst">
                 <div class="sel_scrall">
                     <div class="sel_scrallin">
                         <ul>
-                            <li><a href="#">111</a></li>
-                            <li><a href="#">222</a></li>
+                            <li *ngFor="let menu of cate1.sub">
+                                <a href="#">{{ menu.category_name }}</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </li>
-    <li>
+    <li *ngIf="cate2">
         <div class="categroy_dropbx">
             <div class="resultbx">
-                소카테고리 타이틀
+                {{ cate2.category_name }}
             </div>
             <div class="sel_lst">
                 <div class="sel_scrall">
                     <div class="sel_scrallin">
                         <ul>
-                            <li><a href="#">111</a></li>
-                            <li><a href="#">222</a></li>
+                            <li *ngFor="let menu of cate2.sub">
+                                <a href="#">{{ menu.category_name }}</a>
+                            </li>
                         </ul>
                     </div>
                 </div>

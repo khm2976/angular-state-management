@@ -1,0 +1,11 @@
+{
+    "category_code": 1234,
+    "category_name": "상의",
+    "sub": [{
+        "category_code": 1234,
+        "category_name": "상의"
+    }, {
+        "category_code": 5678,
+        "category_name": "셔츠"
+    }]
+}
