@@ -1,2 +1,2 @@
 # StateManagement
-- 앵귤러 프레임워크에서의 state management 구현
+앵귤러에서 상태관리를 구현한다.
